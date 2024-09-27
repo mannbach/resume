@@ -5,13 +5,13 @@
 % Author: Matthew DeVerna (www.matthewdeverna.com)
 % Date: 2024
 % Design: Cased on Hause Lin's CV (hauselin.com)
-% 
+%
 % Project Overview:
 % -----------------
-% This LaTeX document is designed to help you create a professional CV or 
+% This LaTeX document is designed to help you create a professional CV or
 % resume with ease. It uses as little fancy LaTex functionality or custom functions as possible to maximize its longterm durability and flexibility.
-% The document is structured into multiple sections, each loaded from 
-% separate subfiles for modularity and ease of maintenance. 
+% The document is structured into multiple sections, each loaded from
+% separate subfiles for modularity and ease of maintenance.
 %
 % Key Features:
 % -------------
@@ -29,7 +29,7 @@
 %
 % Important Notes:
 % ----------------
-% - This main file includes the overall structure and settings. 
+% - This main file includes the overall structure and settings.
 % - Each section has its own detailed instructions for further customization.
 %
 % ========================================================
@@ -65,7 +65,7 @@
 \usepackage{ragged2e}
 
 % For underlining with line breaks
-\usepackage{soul} 
+\usepackage{soul}
 
 % All fonts: https://tug.org/FontCatalogue/
 \usepackage{kpfonts} % More professional font
@@ -103,7 +103,7 @@
 
 \begin{document}
 \include{colors.tex} % Load custom colors from colors file
-\mytitle{Your Name}{person@gmail.com}{yourwebsite.com}{Your Address\\Goes here\\This field can be excluded} % Insert your custom title
+\mytitle{Jan Bachmann}{jan@mannbach.de}{mannbach.de} % Insert your custom title
 
 
 % Ensure right side margin is not surpassed by bibliography and the right margin is aligned throughout
@@ -163,7 +163,7 @@ $\dagger \rightarrow$ Equal contribution
 \label{working-papers}
 \newrefcontext[labelprefix=W]
 \printbibliography[type=misc,heading=none,resetnumbers=true,keyword=R]
-    
+
 
 \pdfbookmark[1]{Tools \& Software}{tools}
 \section*{Tools \& Software}
@@ -190,7 +190,7 @@ $\dagger \rightarrow$ Equal contribution
 \pdfbookmark[2]{Posters}{posters}
 \subsection*{Posters}
 \label{posters}
-\newrefcontext[labelprefix=P]        
+\newrefcontext[labelprefix=P]
 \printbibliography[type=misc,heading=none,resetnumbers=true,keyword=P]
 
 \pdfbookmark[2]{Demonstrations \& Tutorials}{demos}
