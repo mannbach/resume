@@ -49,7 +49,7 @@
                         % t - title
     defernumbers=true,  % Delays the assignment of citation numbers until the end of the document, allowing for the correct order of citations within each bibliography section.
 ]{biblatex}
-\addbibresource{ref.bib} % Adds the bibliography resource file 'ref.bib' containing all the references.
+\addbibresource{Publications.bib} % Adds the bibliography resource file 'ref.bib' containing all the references.
 
 % Allows columns that stretch across pages
 \usepackage{longtable}
@@ -99,8 +99,8 @@
   \faAt[regular]~\href{mailto:jan@mannbach.de}{jan@mannbach.de} &
   \faHome[regular]~\href{https://mannbach.de}{mannbach.de} &
   \faOrcid~\href{https://orcid.org/0000-0002-6153-4714}{ORCiD} &
-  \faGoogle~\href{https://scholar.google.de/citations?user=NkxVbcUAAAAJ&hl=de}{Google Scholar} &
-  \faGithub~\href{https://github.com/mannbach}{GitHub} \\
+  \faGoogle~\href{https://scholar.google.de/citations?user=NkxVbcUAAAAJ&hl=de}{Jan Bachmann} &
+  \faGithub~\href{https://github.com/mannbach}{mannbach} \\
 \end{tabular}
 
 
@@ -139,29 +139,46 @@
     resetnumbers=true, % Start item counter from zero
 ]
 
-\pdfbookmark[1]{Presentations}{presentations}
-\section*{Presentations}
-\label{presentations}
+\pdfbookmark[1]{Academia}{academia}
+\section*{Academia}
+\label{academia}
+
+\pdfbookmark[2]{Tools}{tools}
+\subsection*{Tools}
+%
+\begin{itemize}
+    \item \textbf{NetIn} (~\href{https://pypi.org/project/netin/}{\faPython}
+        \hspace{0.5em}\href{https://github.com/CSHVienna/NetworkInequalities}{\faGithub}
+        \hspace{0.5em}\href{https://cshvienna.github.io/NetworkInequalities/}{\faFile*[regular]}~)
+        : A Python package for the analysis of network inequalities.
+
+\end{itemize}
 
 \pdfbookmark[2]{Talks}{talks}
 \subsection*{Talks}
+\begin{longtable}[l]{@{}p{.15\textwidth} p{0.85\textwidth}}
+  08.2024     & Visualizing Complexity Science Workshop; Vienna, Austria\\
+  03.2024     & DPG Spring Convention, Berlin, Germany\\
+  09.2023     & Symposium on Scientific Elites, Copenhagen, Denmark\\
+  07.2023     & International Conference on Computational Social Science (IC$^2$S$^2$)\\
+              & Copenhagen, Denmark\\
+  10.2022     & Conference on Complex Systems (CCS), Palma de Mallorca, Spain
+\end{longtable}
 
 \pdfbookmark[2]{Hosting}{hosting}
 \subsection*{Hosting}
 \label{hosting}
 % \newrefcontext[labelprefix=D] \printbibliography[type=misc,heading=none,resetnumbers=true,keyword=D]
 \begin{longtable}[l]{@{}p{.15\textwidth} p{0.85\textwidth}}
-  09.2024     & \href{https://sites.google.com/view/snma-tutorial/2024}{“Synthetic Network Data”} tutorial at ECML PKDD\\
-  07.2023     & \href{https://sites.google.com/view/netin-satellite-2023/home}{"Network Inequality"} satellite at NetSci 2023\\
+  09.2024     & \href{https://sites.google.com/view/snma-tutorial/2024}{\emph{Synthetic Network Data}} tutorial at ECML PKDD\\
+  07.2023     & \href{https://sites.google.com/view/netin-satellite-2023/home}{\emph{Network Inequality}} satellite at NetSci 2023\\
 \end{longtable}
 
 \pdfbookmark[1]{Academic Services}{services}
-\section*{Academic Service}
-\label{service}
 \input{service.tex}
 
 \pdfbookmark[1]{Professional Experience}{exp_prof}
-\section*{Other Experience}
+\section*{Industry Experience}
 \label{exp_other}
 \input{exp_other.tex}
 
