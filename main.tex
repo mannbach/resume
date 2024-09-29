@@ -59,7 +59,7 @@
 
 % Use icons, if you want.
 % All available icons: http://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf
-\usepackage{fontawesome}
+\usepackage{fontawesome5}
 
 % Allows font justification control (needed for clean pub-list formatting)
 \usepackage{ragged2e}
@@ -88,22 +88,20 @@
     bookmarksopen=true,      % Open bookmarks panel at start
 }
 
-%%% CONVENIENCE FUNCTIONS GO HERE %%%
-%%% ----------------------------- %%%
-\newcommand{\mytitle}[4]{
-  \begin{center}
-    \Large\textbf{#1}\normalsize \\ % Name in large bold font
-    \href{mailto:#2}{#2} \\ % Email with mailto: link
-    \href{https://#3}{#3} \\ % Website with link
-    #4 % Address
-  \end{center}
-}
-%%% ----------------------------- %%%
-
-
 \begin{document}
 \include{colors.tex} % Load custom colors from colors file
-\mytitle{Jan Bachmann}{jan@mannbach.de}{mannbach.de} % Insert your custom title
+
+\begin{center}
+  \Large\textbf{Jan Bachmann}\normalsize
+\end{center}
+
+\begin{tabular}{ccccc}
+  \faAt[regular]~\href{mailto:jan@mannbach.de}{jan@mannbach.de} &
+  \faHome[regular]~\href{https://mannbach.de}{mannbach.de} &
+  \faOrcid~\href{https://orcid.org/0000-0002-6153-4714}{ORCiD} &
+  \faGoogle~\href{https://scholar.google.de/citations?user=NkxVbcUAAAAJ&hl=de}{Google Scholar} &
+  \faGithub~\href{https://github.com/mannbach}{GitHub} \\
+\end{tabular}
 
 
 % Ensure right side margin is not surpassed by bibliography and the right margin is aligned throughout
@@ -112,17 +110,12 @@
 
 % These \pdfbookmark lines create bookmarks in the exported PDF document that display in the left pane.
 % Value in [] sets the indentation level of the bookmark
-\pdfbookmark[1]{Education}{}
+\pdfbookmark[1]{Research Experience}{}
 \section*{Education}
 \input{education.tex}
 
-\pdfbookmark[1]{Research Experience}{exp_research}
-\section*{Research Experience}
-\label{exp_research}
-\input{exp_research.tex}
-
 \pdfbookmark[1]{Awards \& Honors}{awards}
-\section*{Awards \& Honors}
+\section*{Awards}
 \label{awards}
 \input{awards.tex}
 
@@ -134,96 +127,40 @@
 % Add equal contribution dagger
 \vspace{-.75em}
 \small
-\faGoogle~\href{https://scholar.google.com/}{Google Scholar}\\
-$\dagger \rightarrow$ Equal contribution
+
+\hspace{1em}
+
 \normalsize
-
-
 \pdfbookmark[2]{Journal Articles}{journal-article}
-\subsection*{Journal Articles}
-\label{journal-article}
-\newrefcontext[labelprefix=J] % Will prefix bibliography numbers with this letter
-% Ensures publications which are not cited in the document are included in the above sections
 \nocite{*} % Ensures uncited items are included
+% Ensures publications which are not cited in the document are included in the above sections
 \printbibliography[
-    type=article, % Only include @article ref.bib items
     heading=none, % Do not include header. Gives us more control.
     resetnumbers=true, % Start item counter from zero
-    keyword=J % Include items in ref.bib with keyword={J}
 ]
-
-\pdfbookmark[2]{Peer-reviewed Conference Proceedings}{conferences}
-\subsection*{Peer-reviewed Conference Proceedings}
-\label{conferences}
-\newrefcontext[labelprefix=C]
-\printbibliography[type=inproceedings,heading=none,resetnumbers=true,keyword=C]
-
-\pdfbookmark[2]{Working papers}{working-papers}
-\subsection*{Working papers}
-\label{working-papers}
-\newrefcontext[labelprefix=W]
-\printbibliography[type=misc,heading=none,resetnumbers=true,keyword=R]
-
-
-\pdfbookmark[1]{Tools \& Software}{tools}
-\section*{Tools \& Software}
-\label{tools}
-\input{tools.tex}
-
 
 \pdfbookmark[1]{Presentations}{presentations}
 \section*{Presentations}
 \label{presentations}
 
-% Include any additional details here
-% \vspace{-.75em}
-% \small
-% $\dagger \rightarrow$ Equal contribution
-% \normalsize
-
 \pdfbookmark[2]{Talks}{talks}
 \subsection*{Talks}
-\label{talks}
-\newrefcontext[labelprefix=T]
-\printbibliography[type=misc,heading=none,resetnumbers=true,keyword=T]
 
-\pdfbookmark[2]{Posters}{posters}
-\subsection*{Posters}
-\label{posters}
-\newrefcontext[labelprefix=P]
-\printbibliography[type=misc,heading=none,resetnumbers=true,keyword=P]
+\pdfbookmark[2]{Hosting}{hosting}
+\subsection*{Hosting}
+\label{hosting}
+% \newrefcontext[labelprefix=D] \printbibliography[type=misc,heading=none,resetnumbers=true,keyword=D]
+\begin{longtable}[l]{@{}p{.15\textwidth} p{0.85\textwidth}}
+  09.2024     & \href{https://sites.google.com/view/snma-tutorial/2024}{“Synthetic Network Data”} tutorial at ECML PKDD\\
+  07.2023     & \href{https://sites.google.com/view/netin-satellite-2023/home}{"Network Inequality"} satellite at NetSci 2023\\
+\end{longtable}
 
-\pdfbookmark[2]{Demonstrations \& Tutorials}{demos}
-\subsection*{Demonstrations \& Tutorials}
-\label{demos}
-\newrefcontext[labelprefix=D] \printbibliography[type=misc,heading=none,resetnumbers=true,keyword=D]
-
-
-\pdfbookmark[1]{Selected Media Coverage}{media}
-\section*{Selected Media Coverage}
-\label{media}
-\input{media.tex} % Input lines load the material from the subdocuments
-
-
-\pdfbookmark[1]{Teaching}{teaching}
-\section*{Teaching}
-\label{teaching}
-\input{teaching.tex}
-
-
-\pdfbookmark[1]{Academic Advising}{advising}
-\section*{Academic Advising}
-\label{advising}
-\input{advising.tex}
-
-
-\pdfbookmark[1]{Academic Service}{service}
+\pdfbookmark[1]{Academic Services}{services}
 \section*{Academic Service}
 \label{service}
 \input{service.tex}
 
-
-\pdfbookmark[1]{Other Experience}{exp_other}
+\pdfbookmark[1]{Professional Experience}{exp_prof}
 \section*{Other Experience}
 \label{exp_other}
 \input{exp_other.tex}
