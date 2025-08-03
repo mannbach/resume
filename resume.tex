@@ -115,14 +115,13 @@
 % These \pdfbookmark lines create bookmarks in the exported PDF document that display in the left pane.
 % Value in [] sets the indentation level of the bookmark
 \pdfbookmark[1]{Research Experience}{}
-\section*{Education}
-\input{education.tex}
-
-\pdfbookmark[1]{Academia}{academia}
 \section*{Academia}
 \label{academia}
-\pdfbookmark[1]{Awards}{awards}
+\input{education.tex}
+\pdfbookmark[1]{Academia}{academia}
+
 \subsection*{Awards}
+\pdfbookmark[1]{Awards}{awards}
 \label{awards}
 \input{awards.tex}
 
