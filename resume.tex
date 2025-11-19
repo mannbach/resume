@@ -53,14 +53,13 @@
 ]{biblatex}
 \addbibresource{Publications.bib} % Adds the bibliography resource file 'Publications.bib' containing all the references.
 
+% (Removed sourcemap — name highlighting is handled at typesetting time below.)
+
 % --- Custom formatting: bold the specific author 'Bachmann, Jan' and format DOIs as hyperlinks ---
 \usepackage{etoolbox}
 \usepackage{ifthen}
 
-% Bold family name 'Bachmann' everywhere in the bibliography (safer)
-\renewcommand*{\mkbibnamefamily}[1]{%
-  \ifdefstrequal{#1}{Bachmann}{\textbf{#1}}{#1}%
-}
+% author name-format will be declared below (after hyperref/doi macros)
 
 % DOI formatting will be defined after \hypersetup so \href is available.
 
@@ -115,6 +114,23 @@
   \printfield{eprint}%
   \newunit\newblock
   \printfield{url}%
+}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{Bachmann}{Jan}{J.}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
 }
 
 \begin{document}
