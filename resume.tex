@@ -48,8 +48,21 @@
                         % n - name
                         % t - title
     defernumbers=true,  % Delays the assignment of citation numbers until the end of the document, allowing for the correct order of citations within each bibliography section.
+    doi=true,           % ensure DOIs are available to biblatex
+    url=true,           % ensure URLs are available
 ]{biblatex}
-\addbibresource{Publications.bib} % Adds the bibliography resource file 'ref.bib' containing all the references.
+\addbibresource{Publications.bib} % Adds the bibliography resource file 'Publications.bib' containing all the references.
+
+% --- Custom formatting: bold the specific author 'Bachmann, Jan' and format DOIs as hyperlinks ---
+\usepackage{etoolbox}
+\usepackage{ifthen}
+
+% Bold family name 'Bachmann' everywhere in the bibliography (safer)
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifdefstrequal{#1}{Bachmann}{\textbf{#1}}{#1}%
+}
+
+% DOI formatting will be defined after \hypersetup so \href is available.
 
 % Allows columns that stretch across pages
 \usepackage{longtable}
@@ -92,6 +105,16 @@
     pdftitle={Resum\'e Jan Bachmann},    % Title of the PDF
     pdfauthor={Jan Bachmann}, % Author of the PDF
     bookmarksopen=true,      % Open bookmarks panel at start
+}
+
+% DOI formatting: print as a clickable https://doi.org/... link similar to arXiv eprint links
+\DeclareFieldFormat{doi}{\mkbibacro{DOI}\addcolon\space\href{https://doi.org/#1}{\nolinkurl{#1}}}
+\renewbibmacro*{doi+eprint+url}{%
+  \printfield{doi}%
+  \newunit\newblock
+  \printfield{eprint}%
+  \newunit\newblock
+  \printfield{url}%
 }
 
 \begin{document}
