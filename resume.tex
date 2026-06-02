@@ -53,6 +53,9 @@
 ]{biblatex}
 \addbibresource{Publications.bib} % Adds the bibliography resource file 'Publications.bib' containing all the references.
 
+% Drop ISSN from rendered bibliography entries
+\AtEveryBibitem{\clearfield{issn}}
+
 % (Removed sourcemap — name highlighting is handled at typesetting time below.)
 
 % --- Custom formatting: bold the specific author 'Bachmann, Jan' and format DOIs as hyperlinks ---
@@ -153,10 +156,11 @@
 
 % \vspace{1em}
 % \begin{center}
-  \begin{tabular}{ll}
-    \emph{Research Interests} & Science of Science, Computational Social Science, Complex Systems\\
-    \emph{Programming} &Python, SQL, Docker, Web Development, Continuous Integration\\
-    \emph{Languages} &German (native), English (fluent)
+  \begin{tabular}{@{}lp{0.80\textwidth}@{}}
+    \emph{Research Interests} & Computational Social Science, Network Inequality, Complex Systems\\
+    \emph{Programming} & Python, SQL, Docker, Network Analysis, Web Development\\
+    \emph{Open-Source} & NetIn (\href{https://pypi.org/project/netin/}{\faPython}\,/\,\href{https://github.com/CSHVienna/NetworkInequalities}{\faGithub}\,/\,\href{https://cshvienna.github.io/NetworkInequalities/}{\faFile*[regular]}) Python package for analysing network inequalities\\
+    \emph{Languages} & German (native), English (fluent)
   \end{tabular}
 % \end{center}
 
@@ -166,11 +170,11 @@
 %
 % These \pdfbookmark lines create bookmarks in the exported PDF document that display in the left pane.
 % Value in [] sets the indentation level of the bookmark
-\pdfbookmark[1]{Research Experience}{}
-\section*{Academia}
+\pdfbookmark[1]{Education \& Research}{}
+\section*{Education \& Research}
 \label{academia}
 \input{education.tex}
-\pdfbookmark[1]{Academia}{academia}
+\pdfbookmark[1]{Education \& Research}{academia}
 
 \subsection*{Awards}
 \pdfbookmark[1]{Awards}{awards}
@@ -188,17 +192,6 @@
     heading=none, % Do not include header. Gives us more control.
     resetnumbers=true, % Start item counter from zero
 ]
-
-\pdfbookmark[2]{Tools}{tools}
-\subsection*{Tools}
-%
-\begin{itemize}
-    \item \textbf{NetIn} (~\href{https://pypi.org/project/netin/}{\faPython}
-        \hspace{0.5em}\href{https://github.com/CSHVienna/NetworkInequalities}{\faGithub}
-        \hspace{0.5em}\href{https://cshvienna.github.io/NetworkInequalities/}{\faFile*[regular]}~)
-        : A Python package for the analysis of network inequalities.
-
-\end{itemize}
 
 \pdfbookmark[2]{Talks}{talks}
 \subsection*{Talks \& Posters}
