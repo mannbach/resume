@@ -87,6 +87,8 @@
 \usepackage{kpfonts} % More professional font
 % \usepackage[default]{sourcecodepro} % Code-like font
 \usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage[ngerman]{babel}
 
 % https://ctan.fisiquimicamente.com/fonts/academicons/academicons.pdf
 % \usepackage{academicons}
@@ -102,7 +104,7 @@
     urlcolor=mediumslateblue,     % Color of URL links
     anchorcolor=mediumslateblue,  % Color of anchors
     citecolor=mediumslateblue,    % Color of citations
-    pdftitle={Resum\'e Jan Bachmann},    % Title of the PDF
+    pdftitle={Lebenslauf Jan Bachmann},    % Title of the PDF
     pdfauthor={Jan Bachmann}, % Author of the PDF
     bookmarksopen=true,      % Open bookmarks panel at start
 }
@@ -155,9 +157,9 @@
 % \vspace{1em}
 % \begin{center}
   \begin{tabular}{ll}
-    \emph{Research Interests} & Science of Science, Computational Social Science, Complex Systems\\
-    \emph{Programming} &Python, SQL, Docker, Data Analysis \& Visualization, CI/CD\\
-    \emph{Languages} &German (native), English (fluent)
+    \emph{Forschung} & Science of Science, Computational Social Science, Komplexe Systeme\\
+    \emph{Programmierung} & Python, SQL, Docker, Datenanalyse \& Visualisierung, CI/CD\\
+    \emph{Sprachen} & Deutsch, Englisch (C2)
   \end{tabular}
 % \end{center}
 
@@ -167,20 +169,20 @@
 %
 % These \pdfbookmark lines create bookmarks in the exported PDF document that display in the left pane.
 % Value in [] sets the indentation level of the bookmark
-\pdfbookmark[1]{Research Experience}{}
-\section*{Academia}
+\pdfbookmark[1]{Wissenschaft}{}
+\section*{Wissenschaft}
 \label{academia}
 \input{education.tex}
-\pdfbookmark[1]{Academia}{academia}
+% \pdfbookmark[1]{Akademischer Werdegang}{academia}
 
-\subsection*{Awards}
-\pdfbookmark[1]{Awards}{awards}
+\subsection*{Auszeichnungen}
+\pdfbookmark[1]{Auszeichnungen}{awards}
 \label{awards}
 \input{awards.tex}
 
 
-\pdfbookmark[1]{Publications}{pubs}
-\subsection*{Publications}
+\pdfbookmark[1]{Publikationen}{pubs}
+\subsection*{Publikationen}
 \label{pubs}
 \normalsize
 \nocite{*} % Ensures uncited items are included
@@ -197,38 +199,38 @@
     \item \textbf{NetIn} (~\href{https://pypi.org/project/netin/}{\faPython}
         \hspace{0.5em}\href{https://github.com/CSHVienna/NetworkInequalities}{\faGithub}
         \hspace{0.5em}\href{https://cshvienna.github.io/NetworkInequalities/}{\faFile*[regular]}~)
-        : A Python package for the analysis of network inequalities.
+        : Python-Paket zur Analyse von Ungleichheiten in Netzwerken.
 
 \end{itemize}
 
-\pdfbookmark[2]{Talks}{talks}
-\subsection*{Talks \& Posters}
+\pdfbookmark[2]{Vorträge}{talks}
+\subsection*{Vorträge \& Poster}
 \begin{longtable}[l]{@{}p{.15\textwidth} p{0.85\textwidth}}
-  04.2026     & Talk at In\_equality Conference, Konstanz, Germany on~\cite{bachmann.etal_networkinequalitypreferential_2026}\\
-  07.2025     & Poster at International Conference on Computational Social Science (IC$^2$S$^2$)\\
-              & in Norrk\"oping, Sweden on~\cite{bachmann.etal_networkinequalitypreferential_2026}\\
-  08.2024     & Visualizing Complexity Science Workshop; Vienna, Austria\\
-  03.2024     & Talk at DPG Spring Convention, Berlin, Germany on~\cite{bachmann.etal_cumulativeadvantagebrokerage_2026}\\
-  09.2023     & Talk at Symposium on Scientific Elites, Copenhagen, Denmark on~\cite{bachmann.etal_cumulativeadvantagebrokerage_2026}\\
-  07.2023     & Talk at International Conference on Computational Social Science (IC$^2$S$^2$)\\
-              & in Copenhagen, Denmark on~\cite{bachmann.etal_cumulativeadvantagebrokerage_2026}\\
-  10.2022     & Talk at Conference on Complex Systems (CCS), Palma de Mallorca, Spain on~\cite{bachmann.etal_cumulativeadvantagebrokerage_2026}
+  04.2026     & Vortrag bei der In\_equality Conference in Konstanz, zu~\cite{bachmann.etal_networkinequalitypreferential_2026}\\
+  07.2025     & Poster bei International Conference on Computational Social Science (IC$^2$S$^2$)\\
+              & in Norrk\"oping, Schweden, zu~\cite{bachmann.etal_networkinequalitypreferential_2026}\\
+  08.2024     & Visualizing Complexity Science Workshop; Wien, Österreich\\
+  03.2024     & Vortrag bei der DPG-Frühjahrstagung, Berlin, zu~\cite{bachmann.etal_cumulativeadvantagebrokerage_2026}\\
+  09.2023     & Vortrag beim Symposium on Scientific Elites, Kopenhagen, Dänemark, zu~\cite{bachmann.etal_cumulativeadvantagebrokerage_2026}\\
+  07.2023     & Vortrag bei International Conference on Computational Social Science (IC$^2$S$^2$)\\
+              & in Kopenhagen, Dänemark, zu~\cite{bachmann.etal_cumulativeadvantagebrokerage_2026}\\
+  10.2022     & Vortrag bei Conference on Complex Systems (CCS), Mallorca, Spanien, zu~\cite{bachmann.etal_cumulativeadvantagebrokerage_2026}
 \end{longtable}
 
-\pdfbookmark[2]{Hosting}{hosting}
-\subsection*{Hosting}
+\pdfbookmark[2]{Mitorganisierte Veranstaltungen}{hosting}
+\subsection*{Mitorganisierte Veranstaltungen}
 \label{organizing}
 % \newrefcontext[labelprefix=D] \printbibliography[type=misc,heading=none,resetnumbers=true,keyword=D]
 \begin{longtable}[l]{@{}p{.15\textwidth} p{0.85\textwidth}}
-  09.2024     & \href{https://sites.google.com/view/snma-tutorial/2024}{Synthetic Network Data} tutorial at ECML PKDD\\
-  07.2023     & \href{https://sites.google.com/view/netin-satellite-2023/home}{Network Inequality} satellite at NetSci 2023\\
+  09.2024     & Tutorial \href{https://sites.google.com/view/snma-tutorial/2024}{Synthetic Network Data} bei ECML PKDD\\
+  07.2023     & Satellite-Workshop \href{https://sites.google.com/view/netin-satellite-2023/home}{Network Inequality} bei NetSci 2023\\
 \end{longtable}
 
-\pdfbookmark[1]{Academic Services}{services}
+\pdfbookmark[1]{Lehre}{services}
 \input{service.tex}
 
-\pdfbookmark[2]{Professional Experience}{exp_prof}
-\subsection*{Industry Experience}
+\pdfbookmark[1]{Berufserfahrung}{exp_prof}
+\section*{Berufserfahrung}
 \label{exp_other}
 \input{exp_other.tex}
 
